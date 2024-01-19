@@ -137,3 +137,43 @@ h2 {
 
 
 }
+
+@media screen and (max-width:493px) {
+
+    .clock-container {
+        width: 330px;
+        height: 90px;
+    }
+
+    h2,span {
+        font-size: 2.5rem;
+    }
+
+    h2.time{
+        font-size: 0.8rem;
+        padding: 0;
+        backdrop-filter: none;
+        background-color: transparent;
+        margin-right: 1.3rem;
+    }
+
+
+    section::before,
+    section::after{
+        width: 90px;
+        height: 90px;
+    }
+
+    section::before{
+        bottom: -40px;
+        left: -30px;
+    }
+
+    section::after{
+        top: -40px;
+        right: -30px;
+    }
+
+
+
+}
