@@ -1,120 +1,139 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Josefin Sans', sans-serif;
 }
 
-body{
+body {
     height: 100vh;
     display: grid;
     place-content: center;
     background-color: #19172e;
 }
 
-section{
+section {
     position: relative;
-} 
+}
 
-.clock-container{
-    width: 120px; 
-    height: 30px;
+.clock-container {
+    width: 600px;
+    height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 0.2rem;
-    gap: 2px;
+    border-radius: 1rem;
+    gap: 10px;
     background: rgba(255, 255, 255, 0.083);
 }
 
-section::before{
+section::before {
     content: "";
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border-radius: 1rem;
     position: absolute;
     z-index: -1;
-    background: linear-gradient(180deg, rgba(97,154,243,1) 33%, rgba(87,144,234,1) 42%, rgba(0,53,149,1) 83%);
-    bottom: -10px;
-    left: -12px; 
-    animation: animation 1.5s linear infinite alternate;
+    background: linear-gradient(180deg, rgba(97, 154, 243, 1) 33%, rgba(87, 144, 234, 1) 42%, rgba(0, 53, 149, 1) 83%);
+    bottom: -90px;
+    left: -60px;
+    animation: animation 4s linear infinite alternate;
 }
 
-section::after{
-    width: 30px;
-    height: 30px;
+section::after {
+    width: 150px;
+    height: 150px;
     content: "";
-    border-radius: 50%;
+    border-radius: 1rem;
     z-index: -1;
-    background: linear-gradient(180deg, rgba(97,154,243,1) 33%, rgba(87,144,234,1) 42%, rgba(0,53,149,1) 83%);
+    background: linear-gradient(180deg, rgba(97, 154, 243, 1) 33%, rgba(87, 144, 234, 1) 42%, rgba(0, 53, 149, 1) 83%);
     bottom: -20px;
-    background: linear-gradient(180deg, rgba(245,236,3,1) 0%, rgba(247,84,3,1) 77%);
-    top: -10px;
-    right: -12px;
+    background: linear-gradient(180deg, rgba(245, 236, 3, 1) 0%, rgba(247, 84, 3, 1) 77%);
+    top: -90px;
+    right: -60px;
     position: absolute;
-    animation: animate 1.5s linear infinite alternate;
+    animation: animate 4s linear infinite alternate;
 }
 
-span{
+span {
     color: white;
+    font-size: 6rem;
 }
 
-h2{
-    font-size: 1rem;
+h2 {
+    font-size: 6rem;
     background-color: rgba(255, 255, 255, 0.083);
-    backdrop-filter: blur(10px);
-    padding: 0.1rem 0.2rem 0rem;
-    border-radius: 0.1rem;
+    backdrop-filter: blur(30px);
+    padding: 0.5rem 1rem 0;
+    border-radius: 1rem;
     color: rgb(222, 222, 222);
 }
 
-.time{
-    font-size: 0.1rem;
+.time {
+    font-size: 2rem;
     transform: translateY(-50%);
 }
 
 
 
 @keyframes animation {
-    from{
-        transform: translateY(-20%);
-    }
-    to{
-        transform: translateY(20%);
+    to {
+        transform: translateX(400%);
     }
 }
 
 @keyframes animate {
-    from{
-        transform: translateY(20%);
-    }
 
-    to{
-        transform: translateY(-20%);
+    to {
+        transform: translateX(-400%);
     }
 }
 
 
-@media screen and (max-width:792px) and (min-width:300px){
-    h2{
-        font-size: 0.1rem;
+@media screen and (max-width:693px) {
+
+    .clock-container {
+        width: 450px;
+        height: 120px;
     }
 
-    .clock-container{
-        width: 100px;
-        height: 20px;
+    h2 {
+        font-size: 3.5rem;
     }
 
-    h2.time{
-        transform: translateY(0);
+
+
+    @keyframes animation {
+        to {
+            transform: translateX(270%);
+        }
+    }
+
+    @keyframes animate {
+
+        to {
+            transform: translateX(-270%);
+        }
     }
 
     section::before,
     section::after{
-        width: 20px;
-        height: 20px;
+        width: 120px;
+        height: 120px;
     }
+
+    section::before{
+        bottom: -60px;
+        left: -40px;
+    }
+
+    section::after{
+        top: -60px;
+        right: -40px;
+    }
+
+
 
 }
